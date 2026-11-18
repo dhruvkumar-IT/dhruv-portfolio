@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dhruv Kumar | Developer Portfolio</title>
+
+<style>
+:root {
+    --bg: #080d1b;
+    --card: rgba(17, 27, 49, 0.78);
+    --text: #f3f6ff;
+    --muted: #aab5ca;
+    --blue: #55aaff;
+    --cyan: #48e0e8;
+    --border: rgba(255,255,255,0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* BACKGROUND */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+        linear-gradient(rgba(5,10,25,0.86), rgba(5,10,25,0.94)),
+        url("https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?cs=srgb&dl=pexels-tara-winstead-8386440.jpg&fm=jpg");
+    background-size: cover;
+    background-position: center;
+    animation: backgroundMove 25s ease-in-out infinite alternate;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 15% 20%, rgba(0,130,255,0.12), transparent 35%),
+        radial-gradient(circle at 85% 75%, rgba(0,220,220,0.09), transparent 35%);
+}
+
+@keyframes backgroundMove {
+    from { transform: scale(1); }
+    to { transform: scale(1.12); }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(5,10,25,0.85);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 16px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--cyan);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+nav a {
+    font-size: 13px;
+    color: var(--muted);
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--cyan);
+}
+
+/* COMMON SECTIONS */
+
+section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 6%;
+    scroll-margin-top: 75px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.eyebrow {
+    color: var(--cyan);
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: clamp(30px, 5vw, 42px);
+    margin-bottom: 12px;
+}
+
+.gradient {
+    background: linear-gradient(90deg, var(--blue), var(--cyan));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.section-heading p {
+    color: var(--muted);
+    max-width: 600px;
+    margin: auto;
+    font-size: 14px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-tag {
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid rgba(72,224,232,0.35);
+    border-radius: 30px;
+    color: var(--cyan);
+    font-size: 12px;
+    margin-bottom: 22px;
+    background: rgba(72,224,232,0.06);
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 68px);
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.hero h3 {
+    font-size: 20px;
+    color: var(--muted);
+    font-weight: normal;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    max-width: 550px;
+    color: var(--muted);
+    font-size: 15px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 23px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    border: 1px solid var(--blue);
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, var(--blue), var(--cyan));
+    color: #07101e;
+}
+
+.btn-outline {
+    color: var(--cyan);
+    background: transparent;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(72,224,232,0.2);
+}
+
+.profile-wrapper {
+    flex: 0 0 280px;
+    display: flex;
+    justify-content: center;
+}
+
+.profile-frame {
+    width: 260px;
+    height: 260px;
+    padding: 7px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    box-shadow: 0 0 45px rgba(72,224,232,0.2);
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.profile-frame:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 55px rgba(72,224,232,0.4);
+}
+
+.profile-frame img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #17243a;
+}
+
+/* CARDS */
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 27px;
+    backdrop-filter: blur(12px);
+    transition: 0.35s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-color: rgba(72,224,232,0.5);
+    box-shadow: 0 12px 35px rgba(0,130,255,0.12);
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 22px;
+}
+
+.about-grid h3 {
+    margin-bottom: 14px;
+}
+
+.about-grid p {
+    margin-bottom: 12px;
+}
+
+.about-info {
+    display: grid;
+    gap: 15px;
+}
+
+.info-item {
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.info-item:last-child {
+    border: none;
+}
+
+.info-item span {
+    color: var(--cyan);
+    font-size: 12px;
+    display: block;
+}
+
+/* SKILLS */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.skill-icon {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.skill-card h3 {
+    color: var(--text);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+/* EDUCATION */
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.education-card .year {
+    color: var(--cyan);
+    font-size: 12px;
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.education-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* INTERESTS */
+
+.interest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.interest-card {
+    text-align: center;
+}
+
+.interest-card .emoji {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.interest-card h3 {
+    margin-bottom: 8px;
+}
+
+/* PERSONALITY */
+
+.personality {
+    max-width: 850px;
+    margin: 30px auto 0;
+    text-align: center;
+}
+
+.personality-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.personality-tags span {
+    padding: 9px 17px;
+    border: 1px solid rgba(72,224,232,0.3);
+    background: rgba(72,224,232,0.06);
+    border-radius: 30px;
+    color: var(--cyan);
+    font-size: 12px;
+}
+
+/* PROJECTS */
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    min-height: 260px;
+}
+
+.project-icon {
+    font-size: 34px;
+    margin-bottom: 18px;
+}
+
+.project-card h3 {
+    margin-bottom: 12px;
+}
+
+.project-card p {
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.project-link {
+    color: var(--cyan);
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+/* CONTACT */
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.contact-card {
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.contact-card .emoji {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.contact-card h3 {
+    margin-bottom: 8px;
+}
+
+.contact-card a {
+    color: var(--cyan);
+    font-size: 13px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 28px 15px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+    background: rgba(5,10,25,0.7);
+}
+
+/* SCROLL REVEAL */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-35px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(35px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active,
+.reveal-left.active,
+.reveal-right.active {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* PHOTO POPUP */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    background: rgba(0,0,0,0.82);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.modal-content {
+    width: 100%;
+    max-width: 380px;
+    background: #101a30;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+}
+
+.modal-content h3 {
+    margin-bottom: 18px;
+}
+
+.modal-btn {
+    width: 100%;
+    padding: 12px;
+    margin: 6px 0;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.06);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-btn:hover {
+    background: rgba(72,224,232,0.15);
+    border-color: var(--cyan);
+}
+
+.photo-viewer {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 600;
+    background: rgba(0,0,0,0.93);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.photo-viewer img {
+    max-width: 90%;
+    max-height: 85vh;
+    border-radius: 12px;
+    object-fit: contain;
+}
+
+.close-viewer {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 32px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 850px) {
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 70px;
+    }
+
+    .hero p {
+        margin: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-grid,
+    .education-grid,
+    .interest-grid,
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav {
+        gap: 13px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+}
+
+@media(max-width: 700px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media(max-width: 500px) {
+    section {
+        padding: 75px 6%;
+    }
+
+    .profile-frame {
+        width: 210px;
+        height: 210px;
+    }
+
+    .project-grid,
+    .education-grid,
+    .interest-grid,
+    .contact-grid,
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+    <div class="navbar">
+        <div class="logo">Dhruv<span>.</span></div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#interests">Interests</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content reveal-left">
+
+        <div class="hero-tag">WELCOME TO MY PORTFOLIO</div>
+
+        <h1>
+            Hi, I'm <span class="gradient">Dhruv Kumar.</span>
+        </h1>
+
+        <h3>FY BSc IT Student | Aspiring Developer</h3>
+
+        <p>
+            I am a technology enthusiast who enjoys learning,
+            exploring creative ideas and building useful digital
+            experiences. I believe in continuous learning and
+            improving myself one step at a time.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary">Explore My Work</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+        </div>
+
+    </div>
+
+    <div class="profile-wrapper reveal-right">
+
+        <div class="profile-frame" onclick="openPhotoMenu()">
+            <img id="profileImage"
+                 src="https://placehold.co/400x400/14213d/55e0e8?text=Your+Photo"
+                 alt="Dhruv Kumar Profile Photo">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <div class="section-heading reveal">
+        <div class="eyebrow">GET TO KNOW ME</div>
+        <h2>About <span class="gradient">Me.</span></h2>
+        <p>A little introduction about my journey and background.</p>
+    </div>
+
+    <div class="about-grid">
+
+        <div class="card reveal-left">
+            <h3>Who Am I?</h3>
+
+            <p>
+                Hello! I am Dhruv Kumar, a first-year BSc IT student
+                at Jai Hind College, Mumbai.
+            </p>
+
+            <p>
+                I completed my schooling at Kendriya Vidyalaya.
+                During my school years, I developed an interest
+                in learning new things, creative activities and
+                understanding technology.
+            </p>
+
+            <p>
+                Currently, I am exploring programming, web
+                development and Artificial Intelligence.
+                My goal is to turn my ideas into meaningful
+                projects that can help people.
+            </p>
+        </div>
+
+        <div class="card about-info reveal-right">
+
+            <div class="info-item">
+                <span>NAME</span>
+                Dhruv Kumar
+            </div>
+
+            <div class="info-item">
+                <span>CURRENT EDUCATION</span>
+                FY BSc IT
+            </div>
+
+            <div class="info-item">
+                <span>COLLEGE</span>
+                Jai Hind College, Mumbai
+            </div>
+
+            <div class="info-item">
+                <span>FIELD</span>
+                Information Technology
+            </div>
+
+            <div class="info-item">
+                <span>INTEREST</span>
+                Technology & AI
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <div class="section-heading reveal">
+        <div class="eyebrow">WHAT I AM LEARNING</div>
+        <h2>My <span class="gradient">Skills.</span></h2>
+        <p>
+            Technologies and abilities I am exploring
+            and developing through continuous learning.
+        </p>
+    </div>
+
+    <div class="skills-grid">
+
+        <div class="card skill-card reveal">
+            <div class="skill-icon">🌐</div>
+            <h3>HTML</h3>
+            <p>Web page structure</p>
+        </div>
+
+        <div class="card skill-card reveal">
+            <div class="skill-icon">🎨</div>
+            <h3>CSS</h3>
+            <p>Web styling and design</p>
+        </div>
+
+        <div class="card skill-card reveal">
+            <div class="skill-icon">⚡</div>
+            <h3>JavaScript</h3>
+            <p>Interactive websites</p>
+        </div>
+
+        <div class="card skill-card reveal">
+            <div class="skill-icon">💻</div>
+            <h3>C++</h3>
+            <p>Programming fundamentals</p>
+        </div>
+
+        <div class="card skill-card reveal">
+            <div class="skill-icon">🤖</div>
+            <h3>Artificial Intelligence</h3>
+            <p>AI and machine learning</p>
+        </div>
+
+        <div class="card skill-card reveal">
+            <div class="skill-icon">✨</div>
+            <h3>Creative Thinking</h3>
+            <p>Ideas and problem solving</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <div class="section-heading reveal">
+        <div class="eyebrow">MY ACADEMIC BACKGROUND</div>
+        <h2>My <span class="gradient">Education.</span></h2>
+        <p>My educational journey so far.</p>
+    </div>
+
+    <div class="education-grid">
+
+        <div class="card education-card reveal">
+            <div class="year">2024</div>
+            <h3>Class 10</h3>
+            <p>Kendriya Vidyalaya</p>
+            <p>Completed secondary education.</p>
+        </div>
+
+        <div class="card education-card reveal">
+            <div class="year">2026</div>
+            <h3>Class 12 – Science</h3>
+            <p>Kendriya Vidyalaya No. 3, Colaba</p>
+            <p>Completed higher secondary education.</p>
+        </div>
+
+        <div class="card education-card reveal">
+            <div class="year">2026 – Present</div>
+            <h3>BSc Information Technology</h3>
+            <p>Jai Hind College, Mumbai</p>
+            <p>Currently pursuing undergraduate studies.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- INTERESTS AND PERSONALITY -->
+
+<section id="interests">
+
+    <div class="section-heading reveal">
+        <div class="eyebrow">BEYOND THE CLASSROOM</div>
+        <h2>My <span class="gradient">Interests.</span></h2>
+        <p>
+            Things that inspire me to explore, create and learn.
+        </p>
+    </div>
+
+    <div class="interest-grid">
+
+        <div class="card interest-card reveal">
+            <div class="emoji">💻</div>
+            <h3>Technology</h3>
+            <p>Exploring the digital world and new technologies.</p>
+        </div>
+
+        <div class="card interest-card reveal">
+            <div class="emoji">🌐</div>
+            <h3>Web Development</h3>
+            <p>Creating websites and learning how they work.</p>
+        </div>
+
+        <div class="card interest-card reveal">
+            <div class="emoji">🤖</div>
+            <h3>Artificial Intelligence</h3>
+            <p>Understanding AI and its real-world applications.</p>
+        </div>
+
+        <div class="card interest-card reveal">
+            <div class="emoji">🎨</div>
+            <h3>Creative Activities</h3>
+            <p>Expressing ideas through creativity and design.</p>
+        </div>
+
+        <div class="card interest-card reveal">
+            <div class="emoji">📚</div>
+            <h3>Continuous Learning</h3>
+            <p>Discovering new concepts and improving my knowledge.</p>
+        </div>
+
+        <div class="card interest-card reveal">
+            <div class="emoji">🌍</div>
+            <h3>Social Impact</h3>
+            <p>Interested in ideas that can make a positive difference.</p>
+        </div>
+
+    </div>
+
+    <div class="personality card reveal">
+
+        <h3>My Personality</h3>
+
+        <p>
+            I see myself as someone who is thoughtful, creative
+            and curious. I enjoy exploring ideas, understanding
+            people and learning from different experiences.
+            I value kindness, friendship and personal growth.
+        </p>
+
+        <div class="personality-tags">
+            <span>Emotional</span>
+            <span>Mysterious</span>
+            <span>Friendly</span>
+            <span>Kind-hearted</span>
+            <span>Creative</span>
+            <span>Curious</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="section-heading reveal">
+        <div class="eyebrow">MY WORK</div>
+        <h2>My <span class="gradient">Projects.</span></h2>
+        <p>
+            Some of the projects I am developing and exploring.
+        </p>
+    </div>
+
+    <div class="project-grid">
+
+        <div class="card project-card reveal">
+
+            <div class="project-icon">📄</div>
+
+            <h3>ResumeCraft AI</h3>
+
+            <p>
+                An AI-powered resume builder project focused on
+                helping users create professional resumes through
+                a simple and user-friendly experience.
+            </p>
+
+            <a class="project-link"
+               href="https://github.com/dhruvkumar-IT"
+               target="_blank"
+               rel="noopener noreferrer">
+                View GitHub Profile ↗
+            </a>
+
+        </div>
+
+        <div class="card project-card reveal">
+
+            <div class="project-icon">🌐</div>
+
+            <h3>Personal Portfolio</h3>
+
+            <p>
+                A personal portfolio website showcasing my
+                education, interests, skills and projects.
+            </p>
+
+            <a class="project-link"
+               href="https://github.com/dhruvkumar-IT"
+               target="_blank"
+               rel="noopener noreferrer">
+                View GitHub Profile ↗
+            </a>
+
+        </div>
+
+        <div class="card project-card reveal">
+
+            <div class="project-icon">🚀</div>
+
+            <h3>Future Projects</h3>
+
+            <p>
+                I am continuously exploring new ideas and
+                technologies. More interesting projects
+                will be added here as I build them.
+            </p>
+
+            <a class="project-link"
+               href="https://github.com/dhruvkumar-IT"
+               target="_blank"
+               rel="noopener noreferrer">
+                View GitHub Profile ↗
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+    <div class="section-heading reveal">
+        <div class="eyebrow">LET'S CONNECT</div>
+        <h2>Contact <span class="gradient">Me.</span></h2>
+        <p>
+            Feel free to connect with me through these platforms.
+        </p>
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="card contact-card reveal">
+            <div class="emoji">📧</div>
+            <h3>Email</h3>
+            <a href="mailto:dk4518482@gmail.com">
+                dk4518482@gmail.com
+            </a>
+        </div>
+
+        <div class="card contact-card reveal">
+            <div class="emoji">💻</div>
+            <h3>GitHub</h3>
+            <a href="https://github.com/dhruvkumar-IT"
+               target="_blank"
+               rel="noopener noreferrer">
+                dhruvkumar-IT
+            </a>
+        </div>
+
+        <div class="card contact-card reveal">
+            <div class="emoji">🔗</div>
+            <h3>LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/dhruvkumar/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Connect with me
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    <p>Designed & Developed by Dhruv Kumar</p>
+    <p>© <span id="year"></span> All Rights Reserved.</p>
+</footer>
+
+<!-- PHOTO MENU -->
+
+<div class="modal" id="photoModal">
+    <div class="modal-content">
+
+        <h3>Profile Photo</h3>
+
+        <button class="modal-btn" onclick="viewPhoto()">
+            View Photo
+        </button>
+
+        <button class="modal-btn" onclick="changePhoto()">
+            Change Photo
+        </button>
+
+        <button class="modal-btn" onclick="closePhotoMenu()">
+            Cancel
+        </button>
+
+    </div>
+</div>
+
+<input
+    type="file"
+    id="photoInput"
+    accept="image/jpeg,image/png,image/webp"
+    hidden
+>
+
+<!-- PHOTO VIEWER -->
+
+<div class="photo-viewer" id="photoViewer">
+    <button class="close-viewer" onclick="closePhotoViewer()">×</button>
+    <img id="largePhoto" src="" alt="Profile Photo">
+</div>
+
+<script>
+
+/* SCROLL REVEAL */
+
+const revealElements = document.querySelectorAll(
+    ".reveal, .reveal-left, .reveal-right"
+);
+
+const observer = new IntersectionObserver(
+    function(entries) {
+
+        entries.forEach(function(entry) {
+
+            if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+                observer.unobserve(entry.target);
+            }
+
+        });
+
+    },
+    {
+        threshold: 0.12
+    }
+);
+
+revealElements.forEach(function(element) {
+    observer.observe(element);
+});
+
+
+/* FOOTER YEAR */
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+
+/* PROFILE PHOTO */
+
+const profileImage = document.getElementById("profileImage");
+const photoInput = document.getElementById("photoInput");
+
+const defaultPhoto =
+    "https://placehold.co/400x400/14213d/55e0e8?text=Your+Photo";
+
+function openPhotoMenu() {
+    document.getElementById("photoModal").style.display = "flex";
+}
+
+function closePhotoMenu() {
+    document.getElementById("photoModal").style.display = "none";
+}
+
+function viewPhoto() {
+
+    closePhotoMenu();
+
+    document.getElementById("largePhoto").src =
+        profileImage.src;
+
+    document.getElementById("photoViewer").style.display = "flex";
+}
+
+function closePhotoViewer() {
+    document.getElementById("photoViewer").style.display = "none";
+}
+
+function changePhoto() {
+    closePhotoMenu();
+    photoInput.click();
+}
+
+
+/* IMAGE UPLOAD AND RESIZE */
+
+photoInput.addEventListener("change", function(event) {
+
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    const allowedTypes = [
+        "image/jpeg",
+        "image/png",
+        "image/webp"
+    ];
+
+    if (!allowedTypes.includes(file.type)) {
+        alert("Please select a JPG, PNG or WebP image.");
+        photoInput.value = "";
+        return;
+    }
+
+    if (file.size > 8 * 1024 * 1024) {
+        alert("Image size should be less than 8 MB.");
+        photoInput.value = "";
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+
+        const uploadedImage = new Image();
+
+        uploadedImage.onload = function() {
+
+            const canvas = document.createElement("canvas");
+
+            const maxSize = 700;
+
+            let width = uploadedImage.width;
+            let height = uploadedImage.height;
+
+            if (width > height && width > maxSize) {
+                height = Math.round(height * maxSize / width);
+                width = maxSize;
+            } else if (height > maxSize) {
+                width = Math.round(width * maxSize / height);
+                height = maxSize;
+            }
+
+            canvas.width = width;
+            canvas.height = height;
+
+            const context = canvas.getContext("2d");
+
+            context.drawImage(
+                uploadedImage,
+                0,
+                0,
+                width,
+                height
+            );
+
+            const compressedImage =
+                canvas.toDataURL("image/jpeg", 0.85);
+
+            try {
+
+                localStorage.setItem(
+                    "dhruvPortfolioPhoto",
+                    compressedImage
+                );
+
+                profileImage.src = compressedImage;
+
+                alert("Profile photo updated successfully!");
+
+            } catch(error) {
+
+                alert(
+                    "Unable to save this image. Try a smaller image."
+                );
+
+            }
+
+        };
+
+        uploadedImage.onerror = function() {
+            alert("Unable to load this image. Please try another one.");
+        };
+
+        uploadedImage.src = e.target.result;
+
+    };
+
+    reader.onerror = function() {
+        alert("Unable to read this file.");
+    };
+
+    reader.readAsDataURL(file);
+
+    photoInput.value = "";
+
+});
+
+
+/* LOAD SAVED PHOTO */
+
+window.addEventListener("DOMContentLoaded", function() {
+
+    const savedPhoto =
+        localStorage.getItem("dhruvPortfolioPhoto");
+
+    if (savedPhoto) {
+        profileImage.src = savedPhoto;
+    }
+
+});
+
+
+/* CLOSE POPUPS BY CLICKING OUTSIDE */
+
+document.getElementById("photoModal").addEventListener(
+    "click",
+    function(event) {
+
+        if (event.target === this) {
+            closePhotoMenu();
+        }
+
+    }
+);
+
+document.getElementById("photoViewer").addEventListener(
+    "click",
+    function(event) {
+
+        if (event.target === this) {
+            closePhotoViewer();
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
