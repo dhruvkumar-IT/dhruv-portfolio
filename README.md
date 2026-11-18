@@ -44,8 +44,8 @@ dhruv-portfolio/
 ## 🔗 Connect With Me
 
 - **GitHub:** [dhruvkumar-IT](https://github.com/dhruvkumar-IT)
-- **LinkedIn:** [My LinkedIn Profile](https://www.linkedin.com/in/dhruvkumar/)
-- **Email:** [Contact Me](mailto:dk4518482@gmail.com)
+- **LinkedIn:** [My LinkedIn Profile](https://www.linkedin.com/in/dhruv-kumar-44228a44b?utm_source=share_via&utm_content=profile&utm_medium=member_android)
+- **Email:** [Contact Me](mailto:dk4518481@gmail.com)
 
 ---
 
