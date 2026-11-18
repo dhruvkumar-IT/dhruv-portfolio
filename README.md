@@ -50,3 +50,6 @@ dhruv-portfolio/
 ---
 
 ⭐ Thank you for visiting my portfolio!
+## 📸 Portfolio Preview
+
+![Dhruv Kumar Portfolio](portfolio-preview.png)
