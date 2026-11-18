@@ -6,7 +6,7 @@ I am passionate about technology, programming, web development, and Artificial I
 
 ## 🌐 Live Website
 
-[Visit My Portfolio](https://dhruvkumar-it.github.io/dhruv-portfolio/)
+[Visit My Portfolio](https://www.linkedin.com/in/dhruv-kumar-44228a44b?utm_source=share_via&utm_content=profile&utm_medium=member_android)
 
 ## 👨‍🎓 About Me
 
@@ -14,7 +14,7 @@ I am passionate about technology, programming, web development, and Artificial I
 - **Education:** B.Sc. Information Technology
 - **College:** Jai Hind College, Mumbai
 - **Interests:** Web Development, Programming, AI and Creative Activities
-- **Email:** dk4518482@gmail.com
+- **Email:** dk4518481@gmail.com
 
 ## 🛠️ Technologies Used
 
