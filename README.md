@@ -37,7 +37,7 @@ I am passionate about technology, programming, web development, and Artificial I
 ```text
 dhruv-portfolio/
 ├── index.html
-├── profile.jpg
+├── profile.png
 └── README.md
 ```
 
