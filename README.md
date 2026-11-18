@@ -6,7 +6,7 @@ I am passionate about technology, programming, web development, and Artificial I
 
 ## 🌐 Live Website
 
-[Visit My Portfolio](https://www.linkedin.com/in/dhruv-kumar-44228a44b?utm_source=share_via&utm_content=profile&utm_medium=member_android)
+[Visit My Portfolio](https://dhruvkumar-it.github.io/dhruv-portfolio/)
 
 ## 👨‍🎓 About Me
 
