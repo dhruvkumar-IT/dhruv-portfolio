@@ -728,8 +728,8 @@ footer {
 
         <div class="profile-frame" onclick="openPhotoMenu()">
             <img id="profileImage"
-                 src="https://placehold.co/400x400/14213d/55e0e8?text=Your+Photo"
-                 alt="Dhruv Kumar Profile Photo">
+                src="profile.png"
+                alt="Dhruv Kumar Profile Photo">
         </div>
 
     </div>
@@ -1319,18 +1319,9 @@ photoInput.addEventListener("change", function(event) {
 });
 
 
-/* LOAD SAVED PHOTO */
+/* LOAD PROFILE PHOTO */
 
-window.addEventListener("DOMContentLoaded", function() {
-
-    const savedPhoto =
-        localStorage.getItem("dhruvPortfolioPhoto");
-
-    if (savedPhoto) {
-        profileImage.src = savedPhoto;
-    }
-
-});
+profileImage.src = "profile.png";
 
 
 /* CLOSE POPUPS BY CLICKING OUTSIDE */
